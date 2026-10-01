@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Responsive design token dashboard demonstration">
+  <title>TokenBoard — Responsive Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="TokenBoard home">
+        <span class="brand-icon" aria-hidden="true">T</span>
+        <span>
+          <strong>TokenBoard</strong>
+          <small>Design system analytics</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="#overview" aria-current="page">Overview</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#activity">Activity</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">
+          <span aria-hidden="true">◐</span>
+          Theme
+        </button>
+        <button class="avatar" type="button" aria-label="Open profile menu">UP</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-shell container">
+    <aside class="sidebar" aria-label="Dashboard sidebar">
+      <nav>
+        <p class="sidebar-title">Workspace</p>
+        <a class="sidebar-link active" href="#overview"><span aria-hidden="true">⌂</span> Overview</a>
+        <a class="sidebar-link" href="#analytics"><span aria-hidden="true">▥</span> Analytics</a>
+        <a class="sidebar-link" href="#activity"><span aria-hidden="true">◷</span> Activity</a>
+        <a class="sidebar-link" href="#tokens"><span aria-hidden="true">◆</span> Design tokens</a>
+      </nav>
+
+      <section class="sidebar-note" aria-labelledby="responsive-title">
+        <span class="note-icon" aria-hidden="true">✓</span>
+        <div>
+          <h2 id="responsive-title">Responsive</h2>
+          <p>320px → 1440px</p>
+        </div>
+      </section>
+    </aside>
+
+    <main id="main">
+      <header class="hero" id="overview">
+        <div>
+          <p class="eyebrow">Design system / overview</p>
+          <h1>Build once.<br><span>Adapt everywhere.</span></h1>
+          <p class="hero-copy">A mobile-first dashboard built with design tokens, CSS Grid and Flexbox. Resize the browser to see the layout adapt.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#analytics">View analytics</a>
+          <a class="button button-secondary" href="#tokens">Explore tokens</a>
+        </div>
+      </header>
+
+      <section class="stats-grid" aria-labelledby="stats-title">
+        <h2 id="stats-title" class="sr-only">Key metrics</h2>
+
+        <article class="stat-card glass">
+          <div class="stat-top"><span class="stat-label">Active components</span><span class="stat-icon" aria-hidden="true">◆</span></div>
+          <strong class="stat-value">248</strong>
+          <p class="stat-change positive">↑ 12.4% <span>vs last month</span></p>
+        </article>
+
+        <article class="stat-card glass">
+          <div class="stat-top"><span class="stat-label">Token coverage</span><span class="stat-icon" aria-hidden="true">◈</span></div>
+          <strong class="stat-value">94%</strong>
+          <p class="stat-change positive">↑ 4.8% <span>vs last month</span></p>
+        </article>
+
+        <article class="stat-card glass">
+          <div class="stat-top"><span class="stat-label">Build time</span><span class="stat-icon" aria-hidden="true">ϟ</span></div>
+          <strong class="stat-value">1.8s</strong>
+          <p class="stat-change positive">↓ 21% <span>vs last month</span></p>
+        </article>
+
+        <article class="stat-card glass">
+          <div class="stat-top"><span class="stat-label">Satisfaction</span><span class="stat-icon" aria-hidden="true">★</span></div>
+          <strong class="stat-value">4.9</strong>
+          <p class="stat-change positive">↑ 0.2 <span>vs last month</span></p>
+        </article>
+      </section>
+
+      <section class="dashboard-grid" id="analytics" aria-labelledby="analytics-title">
+        <article class="panel chart-panel">
+          <header class="panel-header">
+            <div>
+              <p class="eyebrow">Usage</p>
+              <h2 id="analytics-title">Component adoption</h2>
+            </div>
+            <label class="select-label" for="period">Period
+              <select id="period">
+                <option>Last 30 days</option>
+                <option>Last 90 days</option>
+                <option>This year</option>
+              </select>
+            </label>
+          </header>
+
+          <div class="chart" role="img" aria-label="Line chart showing component adoption increasing from 42 to 86 percent over six months">
+            <div class="chart-grid"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div>
+            <svg viewBox="0 0 760 270" aria-hidden="true" focusable="false">
+              <polyline class="chart-area" points="45,220 170,190 295,205 420,145 545,110 670,65 735,50 735,240 45,240"></polyline>
+              <polyline class="chart-line" points="45,220 170,190 295,205 420,145 545,110 670,65 735,50"></polyline>
+              <circle cx="45" cy="220" r="5"></circle><circle cx="170" cy="190" r="5"></circle><circle cx="295" cy="205" r="5"></circle><circle cx="420" cy="145" r="5"></circle><circle cx="545" cy="110" r="5"></circle><circle cx="670" cy="65" r="5"></circle><circle cx="735" cy="50" r="5"></circle>
+            </svg>
+            <div class="chart-labels"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div>
+          </div>
+        </article>
+
+        <aside class="panel token-panel" id="tokens" aria-labelledby="token-title">
+          <header class="panel-header">
+            <div><p class="eyebrow">Architecture</p><h2 id="token-title">Design tokens</h2></div>
+          </header>
+          <ul class="token-list">
+            <li><span class="swatch brand-swatch" aria-hidden="true"></span><span>Primary</span><code>--color-primary</code></li>
+            <li><span class="swatch accent-swatch" aria-hidden="true"></span><span>Accent</span><code>--color-accent</code></li>
+            <li><span class="swatch surface-swatch" aria-hidden="true"></span><span>Surface</span><code>--color-surface</code></li>
+            <li><span class="swatch border-swatch" aria-hidden="true"></span><span>Border</span><code>--color-border</code></li>
+          </ul>
+          <a class="text-link" href="#tokens-detail">View token architecture →</a>
+        </aside>
+      </section>
+
+      <section class="panel activity-panel" id="activity" aria-labelledby="activity-title">
+        <header class="panel-header">
+          <div><p class="eyebrow">Latest</p><h2 id="activity-title">Recent activity</h2></div>
+          <a class="text-link" href="#activity">View all →</a>
+        </header>
+        <div class="activity-table" role="table" aria-label="Recent component activity">
+          <div class="activity-row activity-head" role="row">
+            <span role="columnheader">Component</span><span role="columnheader">Status</span><span role="columnheader">Updated</span><span role="columnheader">Owner</span>
+          </div>
+          <div class="activity-row" role="row">
+            <span role="cell"><strong>Button</strong><small>Core component</small></span><span role="cell"><span class="badge success">Stable</span></span><span role="cell">Today, 10:42</span><span role="cell">Design team</span>
+          </div>
+          <div class="activity-row" role="row">
+            <span role="cell"><strong>Data table</strong><small>Pattern</small></span><span role="cell"><span class="badge warning">Review</span></span><span role="cell">Today, 09:18</span><span role="cell">Frontend</span>
+          </div>
+          <div class="activity-row" role="row">
+            <span role="cell"><strong>Modal</strong><small>Component</small></span><span role="cell"><span class="badge success">Stable</span></span><span role="cell">Yesterday</span><span role="cell">Platform</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="token-detail panel" id="tokens-detail" aria-labelledby="token-detail-title">
+        <header class="panel-header"><div><p class="eyebrow">Responsive system</p><h2 id="token-detail-title">CSS architecture</h2></div></header>
+        <div class="architecture-cards">
+          <article><h3>320px</h3><p>Single-column mobile layout with compact spacing.</p></article>
+          <article><h3>768px</h3><p>Tablet grid introduces two-column content areas.</p></article>
+          <article><h3>1024px</h3><p>Desktop sidebar and multi-column dashboard.</p></article>
+          <article><h3>1440px</h3><p>Wide desktop layout with larger content density.</p></article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>TokenBoard</strong> · Responsive design token demo</p>
+      <p>Built mobile-first with CSS Grid + Flexbox.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
